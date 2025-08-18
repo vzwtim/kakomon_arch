@@ -1,0 +1,11 @@
+{
+  "name": "arch-exam-drill",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  }
+}
