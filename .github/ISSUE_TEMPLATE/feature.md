@@ -1,11 +1,8 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-labels: enhancement
+name: Feature
+about: 機能追加
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is.
-
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## 要望
+## 受け入れ基準
+## 参考
