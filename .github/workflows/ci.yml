@@ -10,9 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: 'npm'
       - run: npm install
+      - run: npx prisma generate --schema packages/db/prisma/schema.prisma
+      - run: npm run lint
       - run: npm test
+      - run: npm run build

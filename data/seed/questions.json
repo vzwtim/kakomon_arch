@@ -1,11 +1,28 @@
 [
   {
-    "id": 1,
-    "text": "サンプル問題: 建築基準法に関する問いです。",
-    "type": "multiple_choice",
-    "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
-    "answer": 0,
-    "explanation": "解説: この問題の答えは選択肢Aです。",
-    "lawReference": "https://elaws.e-gov.go.jp"
+    "subject": "計画",
+    "topic": "都市計画",
+    "format": "four_choice",
+    "stem": "都市公園の配置計画に関する基本的な考え方はどれか。",
+    "explanation": "公園は利用者の生活圏に応じて階層的に配置する。",
+    "explanationDeep": "例えば近隣住区内に設ける小規模な公園は徒歩圏内に配置する。",
+    "choices": [
+      { "label": "A", "text": "住区全体に一つの大規模公園のみ設ける", "correct": false },
+      { "label": "B", "text": "利用者の生活圏ごとに段階的に公園を配置する", "correct": true },
+      { "label": "C", "text": "公園面積は建蔽率に影響しない", "correct": false },
+      { "label": "D", "text": "公園は全て都市の中心に集中させる", "correct": false }
+    ]
+  },
+  {
+    "subject": "法規",
+    "topic": "建築確認",
+    "format": "true_false",
+    "stem": "木造2階建ての専用住宅は建築確認申請が不要である。",
+    "explanation": "木造2階建てでも原則として確認申請は必要。",
+    "explanationDeep": "ただし、指定確認検査機関による確認など手続きは簡略化されることがある。",
+    "choices": [
+      { "label": "T", "text": "不要である", "correct": false },
+      { "label": "F", "text": "必要である", "correct": true }
+    ]
   }
 ]

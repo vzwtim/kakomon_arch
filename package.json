@@ -6,6 +6,11 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"No tests yet\""
+    "build": "npm run build -w apps/web",
+    "lint": "npm run lint -w apps/web",
+    "test": "npm test -w apps/web"
+  },
+  "dependencies": {
+    "@next/swc-linux-x64-gnu": "^14.1.0"
   }
 }
