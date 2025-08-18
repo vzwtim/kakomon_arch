@@ -14,7 +14,13 @@ pnpm install
 ## 開発コマンド
 
 ```bash
-pnpm --filter @arch-exam-drill/web dev
+npm run dev
+```
+
+## ビルド
+
+```bash
+npm run build
 ```
 
 ## 環境変数 (.env.local)
