@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "text": "サンプル問題: 建築基準法に関する問いです。",
+    "type": "multiple_choice",
+    "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
+    "answer": 0,
+    "explanation": "解説: この問題の答えは選択肢Aです。",
+    "lawReference": "https://elaws.e-gov.go.jp"
+  }
+]
