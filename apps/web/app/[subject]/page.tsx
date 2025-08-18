@@ -5,6 +5,14 @@ async function getTopics(subject: string) {
     `${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/questions?subject=${encodeURIComponent(subject)}&topics=1`,
     { cache: 'no-store' }
   );
+  if (!res.ok) {
+    console.error('Failed to fetch topics', res.status, res.statusText);
+    return [];
+  }
+  if (!res.ok) {
+    console.error('Failed to fetch topics', res.status, res.statusText);
+    return [];
+  }
   return res.json();
 }
 

@@ -3,6 +3,9 @@ import prisma from '@/lib/prisma';
 import { createRouteClient } from '@/lib/supabase-server';
 
 export async function GET(req: Request) {
+  if (req.url.includes('favicon.ico')) {
+    return NextResponse.json({}, { status: 204 });
+  }
   const { searchParams } = new URL(req.url);
   const subject = searchParams.get('subject');
   const topic = searchParams.get('topic');

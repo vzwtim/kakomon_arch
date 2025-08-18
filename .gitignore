@@ -8,4 +8,4 @@ dist
 .env
 pnpm-lock.yaml
 package-lock.json
-
+/apps/web/.env.local
