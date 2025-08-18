@@ -1,6 +1,29 @@
 # Arch Exam Drill
 
-一級建築士学科対策の練習アプリです。過去問の文面を使わず、オリジナル問題と解説をデータベースに保存します。
+一級建築士学科対策の練習アプリです。過去問や第三者サイトの文面は利用せず、すべて自作の問題と解説のみを扱う方針です。
+
+## セットアップ
+
+- Node.js 20
+- pnpm または npm
+
+```bash
+pnpm install
+```
+
+## 開発コマンド
+
+```bash
+pnpm --filter @arch-exam-drill/web dev
+```
+
+## 環境変数 (.env.local)
+
+```
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+DATABASE_URL=postgresql://...
+```
 
 ## 構成
 
@@ -14,4 +37,4 @@ Supabase(Postgres) を利用して認証とデータベースを構築し、Verc
 
 ## ライセンス
 
-MIT
+本リポジトリのコードは MIT ライセンスで提供します。問題データは自作に限り、外部の文面を含めないでください。
