@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { createRouteClient } from '@/lib/supabase-server';
-import { sm2 } from '@/lib/srs';
+import { updateSRS } from '@/lib/srs';
 
 export async function POST(req: Request) {
   const supabase = createRouteClient();
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
   const state = lastForQuestion
     ? { ef: lastForQuestion.ef, interval: lastForQuestion.interval }
     : null;
-  const next = sm2(state, grade);
+  const next = updateSRS(state, grade);
 
   const lastOverall = await prisma.reviewLog.findFirst({
     where: { userId: user.id },
