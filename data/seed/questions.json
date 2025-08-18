@@ -1,0 +1,17 @@
+[
+  {
+    "subject": "計画",
+    "topic": "サンプル単元",
+    "format": "four_choice",
+    "stem": "建築計画で最初に検討すべき敷地条件はどれか?",
+    "explanation": "敷地条件を把握することで設計の方向性が定まる。",
+    "explanationDeep": "Bは法的手続きを指し、初期段階の検討ではない。",
+    "lawUrl": "https://example.com/law",
+    "choices": [
+      { "label": "A", "text": "敷地の形状と方位", "correct": true },
+      { "label": "B", "text": "確認申請の提出", "correct": false },
+      { "label": "C", "text": "竣工検査", "correct": false },
+      { "label": "D", "text": "引き渡し", "correct": false }
+    ]
+  }
+]

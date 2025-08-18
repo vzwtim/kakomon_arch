@@ -1,0 +1,19 @@
+{
+  "name": "arch-exam-drill",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm -w apps/web run build",
+    "lint": "npm -w apps/web run lint",
+    "test": "echo \"No tests yet\""
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "9.1.0",
+    "prettier": "^3.1.1"
+  }
+}

@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Question {
+  id              String   @id @default(cuid())
+  subject         String
+  topic           String
+  format          String
+  stem            String
+  explanation     String
+  explanationDeep String?
+  lawUrl          String?
+  choices         Choice[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Choice {
+  id         String   @id @default(cuid())
+  questionId String
+  label      String
+  text       String
+  correct    Boolean @default(false)
+  Question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model ReviewLog {
+  id         String   @id @default(cuid())
+  userId     String
+  questionId String
+  grade      Int
+  ef         Float
+  interval   Int
+  due        DateTime
+  createdAt  DateTime @default(now())
+}
+
+model UserStat {
+  userId      String @id
+  streakDays  Int    @default(0)
+  todaySolved Int    @default(0)
+  correctRate Float  @default(0)
+}
