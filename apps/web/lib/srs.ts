@@ -3,24 +3,26 @@ export interface ReviewState {
   interval: number;
 }
 
-export function sm2(prev: ReviewState | null, grade: number) {
-  let ef = prev?.ef ?? 2.5;
-  let interval = prev?.interval ?? 0;
+function addDays(date: Date, days: number): Date {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
 
-  if (grade < 3) {
-    interval = 1;
-  } else {
-    if (!prev) {
-      interval = 1;
-    } else if (prev.interval === 1) {
-      interval = 6;
-    } else {
-      interval = Math.round(prev.interval * ef);
-    }
-    ef = ef + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
-    if (ef < 1.3) ef = 1.3;
-  }
-  const due = new Date();
-  due.setDate(due.getDate() + interval);
+export function updateSRS(prev: ReviewState | null, grade: number) {
+  const state = prev ?? { ef: 2.5, interval: 0 };
+  const ef = Math.max(
+    1.3,
+    state.ef + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02)),
+  );
+  const interval =
+    grade < 3
+      ? 1
+      : state.interval === 0
+      ? 1
+      : state.interval === 1
+      ? 6
+      : Math.round(state.interval * ef);
+  const due = addDays(new Date(), interval);
   return { ef, interval, due };
 }

@@ -6,6 +6,7 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const subject = searchParams.get('subject');
   const topic = searchParams.get('topic');
+  const format = searchParams.get('format');
   const topicsOnly = searchParams.get('topics');
   const due = searchParams.get('due');
 
@@ -22,24 +23,36 @@ export async function GET(req: Request) {
       select: { topic: true },
       distinct: ['topic'],
     });
-    return NextResponse.json(topics.map((t) => t.topic));
+    return NextResponse.json(topics.map((t: { topic: string }) => t.topic));
   }
 
   if (due === 'today') {
     const today = new Date();
     const logs = await prisma.reviewLog.findMany({
-      where: { userId: user.id, due: { lte: today } },
+      where: {
+        userId: user.id,
+        due: { lte: today },
+        Question: {
+          subject: subject || undefined,
+          topic: topic || undefined,
+          format: format || undefined,
+        },
+      },
       include: {
         Question: {
           include: { choices: true },
         },
       },
     });
-    return NextResponse.json(logs.map((l) => l.Question));
+    return NextResponse.json(logs.map((l: { Question: unknown }) => l.Question));
   }
 
   const question = await prisma.question.findFirst({
-    where: { subject: subject || undefined, topic: topic || undefined },
+    where: {
+      subject: subject || undefined,
+      topic: topic || undefined,
+      format: format || undefined,
+    },
     include: { choices: true },
   });
 
