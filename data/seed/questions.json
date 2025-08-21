@@ -24,5 +24,19 @@
       { "label": "T", "text": "不要である", "correct": false },
       { "label": "F", "text": "必要である", "correct": true }
     ]
+  },
+  {
+    "subject": "構造",
+    "topic": "鉄筋コンクリート",
+    "format": "four_choice",
+    "stem": "鉄筋コンクリートの部材で、鉄筋が引張力を負担し、コンクリートが圧縮力を負担する理由はどれか。",
+    "explanation": "鉄筋は引張に強く、コンクリートは圧縮に強い性質を持つため。",
+    "explanationDeep": "両材料の欠点を補完し合う複合構造である。",
+    "choices": [
+      { "label": "A", "text": "鉄筋が圧縮力に強いから", "correct": false },
+      { "label": "B", "text": "コンクリートが引張力に強いから", "correct": false },
+      { "label": "C", "text": "鉄筋が引張に強く、コンクリートが圧縮に強いから", "correct": true },
+      { "label": "D", "text": "両方とも同じ強さで負担するから", "correct": false }
+    ]
   }
 ]
