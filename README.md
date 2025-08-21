@@ -25,6 +25,8 @@ npm run build
 
 ## 環境変数 (.env.local)
 
+`apps/web/.env.example` を `.env.local` にコピーして値を設定してください。
+
 ```
 NEXT_PUBLIC_SUPABASE_URL=...
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
